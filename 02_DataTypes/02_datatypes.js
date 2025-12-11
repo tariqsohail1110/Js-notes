@@ -4,9 +4,9 @@
 ECMA => A JavaScript centralized standard (link => https://tc39.es/ecma262/)
 MDN => Easy Documentations
 */
-let name = "Tariq"
-let age = 20
-let isLoggedIn = true
+let name = "Tariq";
+let age = 20;
+let isLoggedIn = true;
 let state;
 /*
 DATATYPES IN JS

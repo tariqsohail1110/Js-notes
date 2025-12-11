@@ -1,5 +1,5 @@
-let postivieValue = 3
-let negativeValue = -postivieValue
+let postivieValue = 3;
+let negativeValue = -postivieValue;
 
 // console.log(negativeValue);
 
@@ -8,10 +8,10 @@ let negativeValue = -postivieValue
 2 % 3 => remainder
 */
 
-let str1 = "hello"
-let str2 = " world"
+let str1 = "hello";
+let str2 = " world";
 
-let str3 = str1 + str2
+let str3 = str1 + str2;
 
 console.log(str3);
 
@@ -24,8 +24,8 @@ console.log(1 + 2 + "2"); //32
 console.log(+true); //1
 console.log(+""); //0 as "" => false and + converts it to number (0 as false => 0)
 
-let counter = 100
-++counter
+let counter = 100;
+++counter;
 console.log(counter); //101
 
 

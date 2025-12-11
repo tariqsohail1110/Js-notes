@@ -1,6 +1,6 @@
-let score = "33"
+let score = "33";
 
-let stringToNumber = Number(score)
+let stringToNumber = Number(score);
 
 console.log(typeof stringToNumber);
 console.log(stringToNumber);
@@ -10,12 +10,12 @@ console.log(stringToNumber);
 "33abc" => will return NaN (not a number, but the datatype will change to number)
 */
 
-let isLoggedIn = true
-let booleanToNumber = Number(isLoggedIn)
+let isLoggedIn = true;
+let booleanToNumber = Number(isLoggedIn);
 console.log(booleanToNumber);
 
-let isNotLoggedOut = false
-let boolToNumber = Number(isNotLoggedOut)
+let isNotLoggedOut = false;
+let boolToNumber = Number(isNotLoggedOut);
 console.log(boolToNumber);
 /*
 true = 1, false = 0
@@ -23,8 +23,8 @@ true = 1, false = 0
 "Hello" => true
 */
 
-let myNumber = 343
-let numToString = String(myNumber)
+let myNumber = 343;
+let numToString = String(myNumber);
 console.log(typeof numToString);
 console.log(numToString);
 

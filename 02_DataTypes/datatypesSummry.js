@@ -8,7 +8,8 @@ undefined
 Symbol (use to make unique objects)
 BigInt
 
-They are all Call By Value, which means when they are called the compiler makes their copy and then returns that copy
+/*
+They are all Call By Value (photocopy of a document), which means when they are called the compiler makes their copy and then returns that copy
 */
 const score = 100; //integer
 const scoreValue = 100.3; //float
@@ -26,7 +27,7 @@ console.log(Id === anotherId);
 let bigNumber = 3442331617777783n //n to declare a bigint variable
 
 
-/*Reference (Non-Primitive) directly allocate the reference of these variables (aka Object Datatypes)
+/*Reference (Non-Primitive) directly allocate the reference of these variables, when they're called, the actual value is returned (aka Object Datatypes) example (a key to access a house)
 Array
 Objects (Dictionaries in Python)
 Functions
