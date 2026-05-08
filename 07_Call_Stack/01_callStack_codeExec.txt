@@ -1,0 +1,92 @@
+JAVASCRIPT EXECUTION CONTEXT (EC)
+
+{} --> Global EC (refered by {this} keyword)
+
+in browser the value of this is a window object, and it changes according to the engines node, bun EXECUTION
+
+Types of EC
+-> Global EC
+-> Funtion EC
+-> Eval EC (in mongoose etc)
+
+{} --> Memory creation phase or ceation phase (Memory Allocation)
+or
+{} --> Exceution Phase 
+
+CODE
+
+let val1 = 10;
+let val2 = 5;
+function addNum(num1, num2) {
+    let total = num1 + num2;
+    return total;
+}
+
+let result = addNum(val1, val2);
+let result2 = addNum(10, 2);
+
+So, how will this execute in JS
+
+Step 01) Global EC --> this
+
+Step 02) Memory Phase (firstly, it takes the variable names and stores their values as undefined) -->
+i) val1 => undefined
+ii)val2 => undefined
+iii) addNum => function definition --> (num1, num2) {
+                            let total = num1 + num2;
+                            return total;
+                        }
+iv) result => undefined
+v) result2 => undefined
+--> first cycle completed
+
+Step 03) Execution Phase -->
+i) val1 = 10
+ii) val2 = 5
+iii) addNum --> New env + execution thread for this method
+now again Memory Phase and Exceution Phase for the function
+
+----> Memory Phase
+num1 => undefined
+num2 => undefined
+total => undefined (as we are looking at the func definiton)
+
+-----> Exceution CONTEXT
+num1 = 10
+num2 = 5
+total = 15 (this will be returned to the Global EC)
+this EC is now Destroyed --> result = 15
+
+Again to Step 03) New env + execution thread for this method
+now again Memory Phase and Exceution Phase for the function
+
+------> Memory Phase
+num1 => undefined
+num2 => undefined
+total => undefined (as we are looking at the func definiton)
+
+-----> Exceution CONTEXT
+num1 = 10
+num2 = 2
+total = 12 (this will be returned to the Global EC)
+this EC is now Destroyed --> result2 = 12
+
+
+++++++++++++++++++++++++++ CALL STACK ++++++++++++++++++++++++++
+
+Let's look at the order 
+suppose below is our stack (LIFO)
+
+[       three() --> exists first    ]
+[       two() --> then this         ]
+[       one() --> lastly this       ]
+[       GLOBAL EC                   ]
+
+we also have three methods
+one() {
+    two() {
+        three()
+    }
+}
+
+For more visual clarity use: https://www.jsv9000.app/
