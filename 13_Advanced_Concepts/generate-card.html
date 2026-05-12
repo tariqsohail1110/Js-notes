@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ID Card Generator</title>
+</head>
+<body>
+<div class="card">
+  <img id="image_url" alt="John" style="width:100%">
+  <h1 id="name">Your Name</h1>
+  <p class="title" id="title">CEO & Founder, Example</p>
+  <button id="sbmt">Generate Card</button>
+</div>
+</body>
+<script>
+    const submit = document.querySelector('#sbmt');
+    submit.addEventListener('click', () => {
+        const reqURL = 'https://api.github.com/users/tariqsohail1110';
+        const xmlReq = new XMLHttpRequest();
+        xmlReq.open('GET', reqURL);
+        xmlReq.onreadystatechange = function () {
+        // console.log(xmlReq.readyState);
+        if(xmlReq.readyState === 4) {
+            // console.log(this.responseText);
+            const data = JSON.parse(this.responseText);
+            document.getElementById('name').innerHTML = data.name;
+            document.getElementById('title').innerHTML = data.bio;
+            document.getElementById('image_url').src = data.avatar_url;
+        }
+    }
+    xmlReq.send();
+    })
+</script>
+</html>
